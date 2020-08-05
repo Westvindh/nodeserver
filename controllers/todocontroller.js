@@ -47,6 +47,15 @@ module.exports = function(app)
 			}
 			
 			//res.json(data);
+			Todo.find({}, function(err, data)
+		{
+			if(err)
+			{
+				throw err;
+			}
+			res.render('todopage', {todos: data});
+			//res.send({todos: data});
+		});
 		});
 	});
 
