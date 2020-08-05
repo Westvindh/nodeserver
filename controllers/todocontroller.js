@@ -33,8 +33,8 @@ module.exports = function(app)
 			{
 				throw err;
 			}
-			//res.render('todopage', {todos: data});
-			res.send({todos: data});
+			res.render('todopage', {todos: data});
+			//res.send({todos: data});
 		});
 	});
 
