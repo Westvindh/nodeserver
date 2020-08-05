@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>To do Page</title>
+</head>
+<body>
+
+<h1>To do list</h1>
+
+<form method = "POST" action = "/todo">
+<input type = "text" name = "item" placeholder = "Enter task" required />
+<input type = "submit" value = "submit">
+</form>
+
+<form method = "POST" action = "/todo2">
+<input type = "text" name = "item" placeholder = "Enter task" required />
+<input type = "submit" value = "delete">
+</form>
+
+
+<ul>
+<% for(var i = 0; i < todos.length; i++){ %>
+<li> <%= todos[i].item %> </li>
+<% } %>
+</ul>
+
+</body>
+</html>

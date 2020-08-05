@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<%- include ("partials/nav.ejs") %>
+
+<h1>Query</h1>
+<%=  qs.dept %>
+
+<form id = "contact-form" method = "POST" action = "/query">
+<label for = "who">Who do you want to contact?</label>
+<input type = "text" name = "who" value = "<%= qs.person %>">
+<label for = "department">Department?</label>
+<input type = "text" name = "department" value = "<%= qs.dept %>">
+<label for = "email">Department?</label>
+<input type = "email" name = "email" value = "<%= qs.email %>">
+<input type = "submit" value = "submit">
+</form>
+
+
+</body>
+</html>
