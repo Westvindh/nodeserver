@@ -52,13 +52,22 @@ module.exports = function(app)
 
 	app.post('/todo2', urlencodedParser, function(req, res)
 	{
-		Todo.find({item: req.body}).remove(function(err, data){
+		/*Todo.find({item: req.body}).remove(function(err, data){
 			if(err)
 			{
 				throw err;
 			}
 			res.json(data);
-		});
+		});*/
+		Todo.find({}, function(err, data)
+			{
+			if(err)
+			{
+				throw err;
+			}
+			res.render('todopage', {todos: data});
+			//res.send({todos: data});
+			});
 	});
 
 	app.delete('/todo/:item', function(req, res)
