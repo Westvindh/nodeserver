@@ -1,4 +1,4 @@
-var bodyParser = require('body-parser');
+33333var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 //mongoose.connect('mongodb+srv://Arjun:arjun@cluster0.j2wc3.mongodb.net/<dbname>?retryWrites=true&w=majority');
@@ -47,15 +47,6 @@ module.exports = function(app)
 			}
 			
 			//res.json(data);
-			Todo.find({}, function(err, data)
-			{
-			if(err)
-			{
-				throw err;
-			}
-			res.render('todopage', {todos: data});
-			//res.send({todos: data});
-			});
 		});
 	});
 
@@ -72,12 +63,14 @@ module.exports = function(app)
 
 	app.delete('/todo/:item', function(req, res)
 	{
-		Todo.find({item: req.params.item.replace(/\-/g, " ")}).remove(function(err, data){
+		Todo.find({}, function(err, data)
+			{
 			if(err)
 			{
 				throw err;
 			}
-			res.json(data);
-		});
+			res.render('todopage', {todos: data});
+			//res.send({todos: data});
+			});
 	});
 }
