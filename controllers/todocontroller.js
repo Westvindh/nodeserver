@@ -1,4 +1,4 @@
-33333var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 //mongoose.connect('mongodb+srv://Arjun:arjun@cluster0.j2wc3.mongodb.net/<dbname>?retryWrites=true&w=majority');
